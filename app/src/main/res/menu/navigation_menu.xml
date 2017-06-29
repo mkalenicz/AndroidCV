@@ -3,30 +3,30 @@
 <group android:checkableBehavior="single">
     <item
         android:id="@+id/menu_contact"
-        android:title="Kontakt"
+        android:title="@string/contact"
         android:icon="@drawable/ic_phone_black_24dp"/>
     <item
         android:id="@+id/menu_skills"
         android:icon="@drawable/ic_adb_black_24dp"
-        android:title="Umiejetnosci"/>
+        android:title="@string/skills"/>
     <item
         android:id="@+id/menu_experience"
         android:icon="@drawable/ic_android_black_24dp"
-        android:title="Doswiadcenie"/>
+        android:title="@string/experience"/>
     <item
         android:id="@+id/menu_education"
         android:icon="@drawable/ic_local_library_black_24dp"
-        android:title="Edukacja"/>
+        android:title="@string/education"/>
 
     <item
         android:id="@+id/menu_hobby"
         android:icon="@drawable/ic_directions_bike_black_24dp"
-        android:title="Hobby"/>
+        android:title="@string/hobby"/>
 
     <item
         android:id="@+id/menu_notes"
         android:icon="@drawable/ic_content_paste_black_24dp"
-        android:title="Notatki"/>
+        android:title="@string/notes"/>
 </group>
 
 </menu>

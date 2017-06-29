@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
+import com.kalenicz.maciej.supercv.Constants;
 import com.kalenicz.maciej.supercv.R;
 
 /**
@@ -11,9 +12,9 @@ import com.kalenicz.maciej.supercv.R;
  */
 
 public class PhoneItem extends CVItem {
+private String number;
 
-
-    public static final String PHONE_NUMBER = "+48602393632";
+//    public static final String PHONE_NUMBER = "+48602393632";
 
     @Override
     public void makeAction(Context context) {
@@ -21,12 +22,13 @@ public class PhoneItem extends CVItem {
     }
 
     public PhoneItem (){
-        super(R.drawable.ic_phone_black_24dp, PHONE_NUMBER);
+        super(R.drawable.ic_phone_black_24dp, Constants.PHONE_NUMBER);
+        number = Constants.PHONE_NUMBER;
     }
 
     public void call(Context context){
         Intent phoneIntent = new Intent(Intent.ACTION_DIAL);
-        phoneIntent.setData(Uri.parse("tel:"+PHONE_NUMBER));
+        phoneIntent.setData(Uri.parse("tel:" + Constants.PHONE_NUMBER));
         context.startActivity(phoneIntent);
     }
 }

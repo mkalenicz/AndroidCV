@@ -84,9 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        intent.putExtra(ContactsContract.Intents.Insert.PHONE, "+48602393632");
 
         intent.setType(ContactsContract.Contacts.CONTENT_TYPE)
-                .putExtra(ContactsContract.Intents.Insert.NAME, "Maciej Kalenicz")
-                .putExtra(ContactsContract.Intents.Insert.PHONE, "+48602393632")
-                .putExtra(ContactsContract.Intents.Insert.EMAIL, "maciej.kalenicz@gmail.com");
+                .putExtra(ContactsContract.Intents.Insert.NAME, Constants.NAME)
+                .putExtra(ContactsContract.Intents.Insert.PHONE, Constants.PHONE_NUMBER)
+                .putExtra(ContactsContract.Intents.Insert.EMAIL, Constants.EMAIL);
         startActivity(intent);
     }
 
