@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.nfc.Tag;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
@@ -36,6 +37,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.kalenicz.maciej.supercv.R.styleable.CoordinatorLayout;
+import static com.kalenicz.maciej.supercv.R.styleable.NavigationView;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 //public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -56,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        PasswordFragment.newInstance().show(getSupportFragmentManager(), "");
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setupToolbar();
@@ -66,8 +71,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @OnClick(R.id.floatingActionButton)
     public void onFabClicked() {
-        Snackbar.make(snacBarAttachLayout, "Test", Snackbar.LENGTH_SHORT).show();
+//        Snackbar.make(snacBarAttachLayout, "Test", Snackbar.LENGTH_SHORT).show();
 //        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
+
+        addToContacts();
+    }
+
+    private void addToContacts() {
+        Intent intent = new Intent(Intent.ACTION_INSERT);
+        intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
+//        intent.putExtra(ContactsContract.Intents.Insert.NAME, "Maciej Kalenicz");
+//        intent.putExtra(ContactsContract.Intents.Insert.PHONE, "+48602393632");
+
+        intent.setType(ContactsContract.Contacts.CONTENT_TYPE)
+                .putExtra(ContactsContract.Intents.Insert.NAME, "Maciej Kalenicz")
+                .putExtra(ContactsContract.Intents.Insert.PHONE, "+48602393632")
+                .putExtra(ContactsContract.Intents.Insert.EMAIL, "maciej.kalenicz@gmail.com");
+        startActivity(intent);
     }
 
     @Override
