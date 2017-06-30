@@ -77,8 +77,8 @@ public class PasswordFragment extends DialogFragment {
     @NonNull
     private boolean isPasswordValid() {
         String userInput = passwordText.getText().toString();
-        userInput.equals(PASSWORD);
-        return true;
+        return userInput.equals(PASSWORD);
+//        return true;
     }
 
     private void notifyAuthenticationFailed() {

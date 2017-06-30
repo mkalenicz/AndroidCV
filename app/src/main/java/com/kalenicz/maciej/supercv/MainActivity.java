@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.snackbar_attach)
-    CoordinatorLayout snacBarAttachLayout;
+    CoordinatorLayout snackBarAttachLayout;
 
 
     @Override
@@ -65,16 +65,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ButterKnife.bind(this);
         setupToolbar();
 
+
         navigationView.setNavigationItemSelectedListener(this);
 //        toolbar.setOnClickListener(this);
     }
 
     @OnClick(R.id.floatingActionButton)
     public void onFabClicked() {
-//        Snackbar.make(snacBarAttachLayout, "Test", Snackbar.LENGTH_SHORT).show();
 //        Toast.makeText(this, "Test", Toast.LENGTH_SHORT).show();
 
         addToContacts();
+    }
+
+    protected void showSnackbar(String message) {
+        Snackbar.make(snackBarAttachLayout, message, Snackbar.LENGTH_SHORT).show();
     }
 
     private void addToContacts() {
