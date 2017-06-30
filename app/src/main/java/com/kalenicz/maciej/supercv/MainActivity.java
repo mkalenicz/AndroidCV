@@ -40,7 +40,7 @@ import butterknife.OnClick;
 import static com.kalenicz.maciej.supercv.R.styleable.CoordinatorLayout;
 import static com.kalenicz.maciej.supercv.R.styleable.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SnackBarShower {
 //public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -77,9 +77,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         addToContacts();
     }
 
-    protected void showSnackbar(String message) {
-        Snackbar.make(snackBarAttachLayout, message, Snackbar.LENGTH_SHORT).show();
-    }
+//    protected void showSnackbar(String message) {
+//        Snackbar.make(snackBarAttachLayout, message, Snackbar.LENGTH_SHORT).show();
+//    }
 
     private void addToContacts() {
         Intent intent = new Intent(Intent.ACTION_INSERT);
@@ -178,5 +178,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();
+    }
+
+    @Override
+    public void showSnackBar(String message) {
+        Snackbar.make(snackBarAttachLayout, message, Snackbar.LENGTH_SHORT).show();
     }
 }

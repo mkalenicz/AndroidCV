@@ -1,5 +1,9 @@
 package com.kalenicz.maciej.supercv;
 
+import android.content.ContentUris;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -20,8 +24,12 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ContactFragment extends Fragment {
+
+//    private MainActivity mainActivity;
+private SnackBarShower snackBarShower;
     @BindView(R.id.contactFragmentContainer)
     LinearLayout container;
+
 
     public ContactFragment() {
         // Required empty public constructor
@@ -30,6 +38,13 @@ public class ContactFragment extends Fragment {
     public static ContactFragment newInstance() {
         ContactFragment fragment = new ContactFragment();
         return fragment;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof SnackBarShower)
+            snackBarShower = (SnackBarShower) context;
     }
 
     @Override
@@ -42,7 +57,7 @@ public class ContactFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_contact, container, false);
-                ButterKnife.bind(this, view);
+        ButterKnife.bind(this, view);
 
         return view;
     }
@@ -54,23 +69,27 @@ public class ContactFragment extends Fragment {
         final MailItem mailItem = new MailItem();
 
 //        final NoActionItem noItem = new NoActionItem ();
-        final GithubItem githubItem = new GithubItem ("http://github.com/mkalenicz/");
+        final GithubItem githubItem = new GithubItem("http://github.com/mkalenicz/");
 
         CvRow mailRow = new CvRow(getActivity(), mailItem);
         CvRow phoneRow = new CvRow(getActivity(), phoneItem);
 //        CvRow noRow = new CvRow (getActivity(), noItem);
-        CvRow githubRow = new CvRow (getActivity(), githubItem);
+        CvRow githubRow = new CvRow(getActivity(), githubItem);
 
         MessengerItem messengerItem = new MessengerItem();
-        CvRow messengerRow = new CvRow (getActivity(), messengerItem);
-        messengerRow.setOnClickListener(new View.OnClickListener(){
+        CvRow messengerRow = new CvRow(getActivity(), messengerItem);
+        messengerRow.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if (/*mamy messengera*/false) {
-                    //Pokaz messengera
+                Uri uri = Uri.parse("fb-messenger://user/");
+                uri = ContentUris.withAppendedId(uri, 100000037822621L);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
+                 getActivity().startActivity(intent);
                 } else {
-                    ((MainActivity) getActivity()).showSnackbar("Brak facebooka, słabo");
+//                    ((MainActivity) getActivity()).showSnackbar("Brak facebooka, słabo");
+                    snackBarShower.showSnackBar("Brak messengera");
                 }
             }
         });
@@ -83,4 +102,9 @@ public class ContactFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        snackBarShower = null;
+    }
 }
