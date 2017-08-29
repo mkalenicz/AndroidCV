@@ -42,7 +42,7 @@ import static com.kalenicz.maciej.supercv.R.styleable.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SnackBarShower {
 //public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-
+//Travis
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.drawerLayout)
