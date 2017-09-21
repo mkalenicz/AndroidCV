@@ -4,14 +4,24 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class SkillsFragment extends Fragment {
 
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+    private List<SkillsItems> skillsItemsList;
 
+//private RecyclerView recyclerView;
+//    private RecyclerView.Adapter adapter;
     public SkillsFragment() {
         // Required empty public constructor
     }
@@ -30,7 +40,23 @@ public class SkillsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_skills, container, false);
+//        RecyclerView rv = new RecyclerView(getContext());
+//        rv.setLayoutManager(new LinearLayoutManager(getContext()));
+//        rv.setAdapter(new AdapterSkills());
+View view = inflater.inflate(R.layout.fragment_skills, container, false);
+        recyclerView = (RecyclerView) view.findViewById(R.id.sklillsRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        skillsItemsList = new ArrayList<>();
+
+        for (int i = 0; i<=10; i++){
+            SkillsItems skillsItems = new SkillsItems("Skill"  + (i+1));
+            skillsItemsList.add(skillsItems);
+        }
+        adapter = new AdapterSkills(skillsItemsList, getContext());
+        recyclerView.setAdapter(adapter);
+        return view;
     }
 
 }

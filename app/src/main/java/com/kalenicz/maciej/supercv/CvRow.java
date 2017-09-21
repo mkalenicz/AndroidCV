@@ -12,8 +12,7 @@ import android.widget.TextView;
 
 
 import com.kalenicz.maciej.supercv.Model.CVItem;
-import com.kalenicz.maciej.supercv.Model.MailItem;
-import com.kalenicz.maciej.supercv.Model.PhoneItem;
+
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 

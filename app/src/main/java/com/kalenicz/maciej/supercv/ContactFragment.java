@@ -12,16 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.kalenicz.maciej.supercv.Model.CVItem;
 import com.kalenicz.maciej.supercv.Model.GithubItem;
 import com.kalenicz.maciej.supercv.Model.MailItem;
 import com.kalenicz.maciej.supercv.Model.MessengerItem;
-import com.kalenicz.maciej.supercv.Model.NoActionItem;
 import com.kalenicz.maciej.supercv.Model.PhoneItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class ContactFragment extends Fragment {
 

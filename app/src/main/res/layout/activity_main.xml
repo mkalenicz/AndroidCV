@@ -29,10 +29,11 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
+                android:layout_width="286dp"
+                android:layout_height="222dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_android_black_24dp" />
+                android:src="@drawable/photo_cv"
+                tools:ignore="ContentDescription" />
 
         </FrameLayout>
 

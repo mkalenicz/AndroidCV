@@ -17,6 +17,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
@@ -33,6 +35,9 @@ import com.kalenicz.maciej.supercv.Model.MailItem;
 import com.kalenicz.maciej.supercv.Model.NoActionItem;
 import com.kalenicz.maciej.supercv.Model.PhoneItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -43,6 +48,10 @@ import static com.kalenicz.maciej.supercv.R.styleable.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SnackBarShower {
 //public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 //Travis
+//    private RecyclerView recyclerView;
+//    private RecyclerView.Adapter adapter;
+//private List<SkillsItems> skillsItemsList;
+
     private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.drawerLayout)
@@ -67,6 +76,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         navigationView.setNavigationItemSelectedListener(this);
+
+//        recyclerView = (RecyclerView)findViewById(R.id.sklillsRecyclerView);
+//        recyclerView.setHasFixedSize(true);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//
+//        skillsItemsList = new ArrayList<>();
+//
+//        for (int i = 0; i<=10; i++){
+//            SkillsItems skillsItems = new SkillsItems("Skill"  + i+1);
+//            skillsItemsList.add(skillsItems);
+//        }
+//        adapter = new AdapterSkills(skillsItemsList, this);
+//        recyclerView.setAdapter(adapter);
+
+
 //        toolbar.setOnClickListener(this);
     }
 
@@ -128,9 +152,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void showInfoDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this)
-                .setTitle("Tesla")
-                .setIcon(R.drawable.ic_phone_black_24dp)
-                .setMessage("Kierownik sprzedaży")
+                .setTitle("Confidentiality clause")
+                .setIcon(R.drawable.ic_info_black_24dp)
+                .setMessage("I hereby declare that all the facts and information provided for this cover letter and CV are true. I allow my personal data stated in the abovementioned applications to be processed for the purpose of recruitment, in accordance with the Personal Data Protection Act dated 29/08/1997 (Dz.Ust.No.133, item 883)")
                 .setNeutralButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
