@@ -16,6 +16,7 @@ import com.kalenicz.maciej.supercv.Model.GithubItem;
 import com.kalenicz.maciej.supercv.Model.MailItem;
 import com.kalenicz.maciej.supercv.Model.MessengerItem;
 import com.kalenicz.maciej.supercv.Model.PhoneItem;
+import com.kalenicz.maciej.supercv.Model.WebItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,11 +68,13 @@ private SnackBarShower snackBarShower;
 
 //        final NoActionItem noItem = new NoActionItem ();
         final GithubItem githubItem = new GithubItem("http://github.com/mkalenicz/");
+        final WebItem webItem = new WebItem("http://linkedin.com/in/mkalenicz");
 
         CvRow mailRow = new CvRow(getActivity(), mailItem);
         CvRow phoneRow = new CvRow(getActivity(), phoneItem);
 //        CvRow noRow = new CvRow (getActivity(), noItem);
         CvRow githubRow = new CvRow(getActivity(), githubItem);
+        CvRow webItemRow = new CvRow(getActivity(), webItem);
 
         MessengerItem messengerItem = new MessengerItem();
         CvRow messengerRow = new CvRow(getActivity(), messengerItem);
@@ -96,6 +99,7 @@ private SnackBarShower snackBarShower;
 //        container.addView(noRow);
         container.addView(githubRow);
         container.addView(messengerRow);
+        container.addView(webItemRow);
 
     }
 

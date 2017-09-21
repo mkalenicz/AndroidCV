@@ -181,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openFragment(ContactFragment.newInstance());
                 break;
             case R.id.menu_experience:
+                openFragment(ExperienceFragment.newInstance());
                 break;
             case R.id.menu_skills:
                 openFragment(SkillsFragment.newInstance());

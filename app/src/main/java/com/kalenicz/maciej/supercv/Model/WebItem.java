@@ -15,7 +15,7 @@ public class WebItem extends CVItem {
     private final String address;
 
     public WebItem(String address) {
-        super(R.drawable.ic_http_black_24dp, address);
+        super(R.drawable.ic_linkedin_logo, address);
         this.address = address;
     }
 
