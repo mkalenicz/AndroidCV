@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_phone_black_24dp"/>
     <item
         android:id="@+id/menu_skills"
-        android:icon="@drawable/ic_adb_black_24dp"
+        android:icon="@drawable/ic_build_black_24dp"
         android:title="@string/skills"/>
     <item
         android:id="@+id/menu_experience"
@@ -19,9 +19,9 @@
         android:title="@string/education"/>
 
     <item
-        android:id="@+id/menu_hobby"
-        android:icon="@drawable/ic_directions_bike_black_24dp"
-        android:title="@string/hobby"/>
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="@string/profile"/>
 
     <item
         android:id="@+id/menu_notes"

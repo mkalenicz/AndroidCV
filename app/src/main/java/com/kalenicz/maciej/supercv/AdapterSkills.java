@@ -19,8 +19,8 @@ public class AdapterSkills extends RecyclerView.Adapter<AdapterSkills.ViewHolder
     private Context context;
 
     public AdapterSkills(List<SkillsItems> skills, Context context){
-        this.skills = skills;
-        this.context = context;
+            this.skills = skills;
+            this.context = context;
 
     }
     @Override

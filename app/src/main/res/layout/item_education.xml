@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+<ImageView
+    android:id="@+id/company_logo_education"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:src="@drawable/logo_sda_samo"
+    android:layout_weight="0.25"/>
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_weight="0.1"
+       android:layout_gravity="center"
+       android:layout_marginLeft="8dp">
+       <TextView
+           android:id="@+id/company_name_education"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Software Development Academy"
+           android:textStyle="bold"/>
+       <TextView
+           android:id="@+id/company_description_education"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="JAVA + Android course" />
+
+       <TextView
+           android:id="@+id/company_details_education"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="360h programming course"
+           android:textStyle="italic"/>
+   </LinearLayout>
+ <TextView
+     android:id="@+id/date_education_item"
+     android:layout_weight="0.2"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="2017 (MAR.) - 2017 (SEPT.)"
+     android:layout_gravity="center" />
+    
+</LinearLayout>

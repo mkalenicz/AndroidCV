@@ -1,10 +1,7 @@
 package com.kalenicz.maciej.supercv;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
-import android.nfc.Tag;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -17,33 +14,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.kalenicz.maciej.supercv.Model.DialogItem;
-import com.kalenicz.maciej.supercv.Model.MailItem;
-import com.kalenicz.maciej.supercv.Model.NoActionItem;
-import com.kalenicz.maciej.supercv.Model.PhoneItem;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import static com.kalenicz.maciej.supercv.R.styleable.CoordinatorLayout;
-import static com.kalenicz.maciej.supercv.R.styleable.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SnackBarShower {
 //public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -192,8 +171,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.menu_education:
                 openFragment(EducationFragment.newInstance());
                 break;
-            case R.id.menu_hobby:
-                openFragment(HobbyFragment.newInstance());
+            case R.id.menu_profile:
+                openFragment(ProfileFragment.newInstance());
 
         }
     }
