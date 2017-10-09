@@ -1,4 +1,4 @@
-package com.kalenicz.maciej.supercv;
+package com.kalenicz.maciej.supercv.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.kalenicz.maciej.supercv.R;
+import com.kalenicz.maciej.supercv.SkillsItems;
+
 import java.util.List;
 
 /**

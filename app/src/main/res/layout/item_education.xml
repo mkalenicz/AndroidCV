@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="48dp"
     android:src="@drawable/logo_sda_samo"
-    android:layout_weight="0.25"/>
+    android:layout_weight="0.20"/>
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -38,10 +38,11 @@
    </LinearLayout>
  <TextView
      android:id="@+id/date_education_item"
-     android:layout_weight="0.2"
+     android:layout_weight="0.18"
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:text="2017 (MAR.) - 2017 (SEPT.)"
+     android:gravity="right"
      android:layout_gravity="center" />
     
 </LinearLayout>

@@ -1,7 +1,5 @@
 package com.kalenicz.maciej.supercv;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import com.kalenicz.maciej.supercv.Adapters.AdapterEducation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,10 @@ public class EducationFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         educationItemsList = new ArrayList<>();
-        educationItemsList.add(new EducationItems("Android Studio", "Android ", "Android", "2017-2018", R.drawable.ic_linkedin_logo));
+        educationItemsList.add(new EducationItems("Software Development Academy", "JAVA + Android course", "360h programming course", "2017 (MAR.) - 2017 (SEPT.)", R.drawable.logo_sda_samo));
+        educationItemsList.add(new EducationItems("Wroclaw University of Economics", "Faculty of Management, Information Systems and Finance", "Postgraduate studies - Academy of Startup", "2016 - 2017", R.drawable.logo_ue));
+        educationItemsList.add(new EducationItems("Wroclaw University of Technology", "Faculty of Microsystem Electronics and Photonics", "Master Degree in Mechatronics", "2015 - 2017", R.drawable.logo_pwr));
+
 
         adapter = new AdapterEducation(educationItemsList, getContext());
         recyclerView.setAdapter(adapter);

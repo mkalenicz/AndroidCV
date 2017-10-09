@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.1"
+        android:layout_gravity="center"
+        android:layout_marginLeft="8dp">
+
+        <ImageView
+            android:id="@+id/company_logo_experience"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:src="@drawable/logo_pwr_racing"
+            android:layout_weight="0.20"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/company_name_experience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PWR Racing Team"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/company_description_experience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marketing and Management" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/date_experience_item"
+        android:layout_weight="0.16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2012 (2 Months)"
+        android:gravity="right"
+        android:layout_gravity="center" />
 </LinearLayout>

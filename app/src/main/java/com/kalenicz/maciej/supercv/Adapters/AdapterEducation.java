@@ -1,4 +1,4 @@
-package com.kalenicz.maciej.supercv;
+package com.kalenicz.maciej.supercv.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.kalenicz.maciej.supercv.EducationItems;
+import com.kalenicz.maciej.supercv.R;
 
 import java.util.List;
 
@@ -64,8 +67,6 @@ public class AdapterEducation extends RecyclerView.Adapter<AdapterEducation.View
             textViewCompanyDetailsEducation = (TextView) itemView.findViewById(R.id.company_details_education);
             textViewDateEducation = (TextView) itemView.findViewById(R.id.date_education_item);
             imageViewLogoEducation = (ImageView) itemView.findViewById(R.id.company_logo_education);
-
-
 
         }
     }

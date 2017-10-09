@@ -24,7 +24,7 @@ import butterknife.OnClick;
 
 
 public class PasswordFragment extends DialogFragment {
-    private static final String PASSWORD = "123";
+    private static final String PASSWORD = "AndroidDeveloper007";
     private static final int VIBRATION_TIME = 700;
     private Animation shake;
 
